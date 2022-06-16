@@ -28,69 +28,87 @@ const Sidebar: React.FC = () => {
 
             <div className="center">
                 <ul>
+                    <p className="title">MAIN</p>
+
                     <li>
-                        <MdDashboard />
+                        <MdDashboard className='icon'/>
                         <span>Dashboard</span>
                     </li>
 
+                    <p className="title">LISTS</p>
+
                     <li>
-                        <MdPersonOutline />
+                        <MdPersonOutline className='icon'/>
                         <span>Users</span>
                     </li>
 
                     <li>
-                        <MdStore />
+                        <MdStore className='icon'/>
                         <span>Products</span>
                     </li>
 
                     <li>
-                        <MdOutlinePayment />
+                        <MdOutlinePayment className='icon'/>
                         <span>Orders</span>
                     </li>
 
                     <li>
-                        <MdLocalShipping />
+                        <MdLocalShipping className='icon'/>
                         <span>Delivery</span>
                     </li>
 
+                    <p className="title">USEFUL</p>
+
                     <li>
-                        <MdInsertChart />
+                        <MdInsertChart className='icon'/>
                         <span>Stats</span>
                     </li>
 
                     <li>
-                        <MdNotificationsNone />
+                        <MdNotificationsNone className='icon'/>
                         <span>Notification</span>
                     </li>
 
+                    <p className="title">SERVICE</p>
+
                     <li>
-                        <MdOutlineSettingsSystemDaydream />
+                        <MdOutlineSettingsSystemDaydream className='icon'/>
                         <span>System Health</span>
                     </li>
 
                     <li>
-                        <MdOutlinePsychology />
+                        <MdOutlinePsychology className='icon'/>
                         <span>Logs</span>
                     </li>
 
                     <li>
-                        <MdSettingsApplications />
+                        <MdSettingsApplications className='icon'/>
                         <span>Settings</span>
                     </li>
 
+                    <p className="title">USER</p>
+
                     <li>
-                        <MdOutlineAccountCircle />
+                        <MdOutlineAccountCircle className='icon'/>
                         <span>Profile</span>
                     </li>
 
                     <li>
-                        <MdExitToApp />
+                        <MdExitToApp className='icon'/>
                         <span>Logout</span>
                     </li>
                 </ul>
             </div>
 
-            <div className="bottom">color options</div>
+            <div className="bottom">
+                <div className="border-style">
+                    <div className="colorOption light"></div>
+                </div>
+
+                <div className="border-style">
+                    <div className="colorOption gray"></div>
+                </div>
+            </div>
         </div>
     )
 }
