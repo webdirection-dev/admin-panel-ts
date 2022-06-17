@@ -4,6 +4,8 @@ import './home.scss'
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import Widget from "../../components/widget/Widget"
+import Featured from "../../components/featured/Featured"
+import Chart from "../../components/chart/Chart"
 
 const Home: React.FC = () => {
 
@@ -19,6 +21,11 @@ const Home: React.FC = () => {
                     <Widget type='order' />
                     <Widget type='earning' />
                     <Widget type='balance' />
+                </div>
+
+                <div className="charts">
+                    <Featured />
+                    <Chart />
                 </div>
             </div>
         </div>
