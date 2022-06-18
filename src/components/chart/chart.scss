@@ -6,10 +6,14 @@
     padding: 10px;
 
     .title {
-        margin-bottom: 20px;
+        //margin-bottom: 20px;
     }
 
     .chartGrid {
         stroke: rgb(228, 225, 225);
+    }
+
+    .recharts-responsive-container {
+        height: 0px;
     }
 }

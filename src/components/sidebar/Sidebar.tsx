@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from 'react-router-dom'
 import './sidebar.scss'
 
 import {
@@ -31,15 +32,19 @@ const Sidebar: React.FC = () => {
                     <p className="title">MAIN</p>
 
                     <li>
-                        <MdDashboard className='icon'/>
-                        <span>Dashboard</span>
+                        <Link to={'/'}>
+                            <MdDashboard className='icon'/>
+                            <span>Dashboard</span>
+                        </Link>
                     </li>
 
                     <p className="title">LISTS</p>
 
                     <li>
-                        <MdPersonOutline className='icon'/>
-                        <span>Users</span>
+                        <Link to={'/users'}>
+                            <MdPersonOutline className='icon'/>
+                            <span>Users</span>
+                        </Link>
                     </li>
 
                     <li>
