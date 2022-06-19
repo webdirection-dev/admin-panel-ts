@@ -33,11 +33,11 @@ const Main: React.FC = () => {
                             <Route path="new" element={<New />} />
                         </Route>
 
-                        <Route path="products">
-                            <Route index element={<List />} />
-                            <Route path=":productId" element={<Single />} />
-                            <Route path="new" element={<New />} />
-                        </Route>
+                        {/*<Route path="products">*/}
+                        {/*    <Route index element={<List />} />*/}
+                        {/*    <Route path=":productId" element={<Single />} />*/}
+                        {/*    <Route path="new" element={<New />} />*/}
+                        {/*</Route>*/}
                     </Route>
 
                     <Route path="*" element={<NotFond />} />

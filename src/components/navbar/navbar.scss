@@ -9,6 +9,9 @@
     background-color: white;
     border-bottom: 0.5px solid rgb(231, 228, 228);
     border-left: 0.5px solid rgb(231, 228, 228);
+    -webkit-box-shadow: -7px 5px 5px -5px rgba(201, 201, 201, .6);
+    -moz-box-shadow: -7px 5px 5px -5px rgba(201, 201, 201, .6);
+    box-shadow: -7px 5px 5px -5px rgba(201, 201, 201, .6);
     z-index: 1000;
 
     .wrapper {

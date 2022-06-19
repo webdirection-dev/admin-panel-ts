@@ -1,23 +1,13 @@
 import React from "react"
-import {Link} from 'react-router-dom'
 import './sidebar.scss'
 
-import {
-    MdDashboard,
-    MdPersonOutline,
-    MdStore,
-    MdOutlinePayment,
-    MdLocalShipping,
-    MdInsertChart,
-    MdNotificationsNone,
-    MdOutlineSettingsSystemDaydream,
-    MdOutlinePsychology,
-    MdSettingsApplications,
-    MdOutlineAccountCircle,
-    MdExitToApp,
-} from "react-icons/md"
+import SidebarItem from "./SidebarItem"
+
+import {sidebarData} from "../../static-data/sidebar-data"
+import {useLocation} from "react-router-dom";
 
 const Sidebar: React.FC = () => {
+    const {pathname} = useLocation()
 
     return(
         <div className='sidebar'>
@@ -29,79 +19,13 @@ const Sidebar: React.FC = () => {
 
             <div className="center">
                 <ul>
-                    <p className="title">MAIN</p>
-
-                    <li>
-                        <Link to={'/'}>
-                            <MdDashboard className='icon'/>
-                            <span>Dashboard</span>
-                        </Link>
-                    </li>
-
-                    <p className="title">LISTS</p>
-
-                    <li>
-                        <Link to={'/users'}>
-                            <MdPersonOutline className='icon'/>
-                            <span>Users</span>
-                        </Link>
-                    </li>
-
-                    <li>
-                        <MdStore className='icon'/>
-                        <span>Products</span>
-                    </li>
-
-                    <li>
-                        <MdOutlinePayment className='icon'/>
-                        <span>Orders</span>
-                    </li>
-
-                    <li>
-                        <MdLocalShipping className='icon'/>
-                        <span>Delivery</span>
-                    </li>
-
-                    <p className="title">USEFUL</p>
-
-                    <li>
-                        <MdInsertChart className='icon'/>
-                        <span>Stats</span>
-                    </li>
-
-                    <li>
-                        <MdNotificationsNone className='icon'/>
-                        <span>Notification</span>
-                    </li>
-
-                    <p className="title">SERVICE</p>
-
-                    <li>
-                        <MdOutlineSettingsSystemDaydream className='icon'/>
-                        <span>System Health</span>
-                    </li>
-
-                    <li>
-                        <MdOutlinePsychology className='icon'/>
-                        <span>Logs</span>
-                    </li>
-
-                    <li>
-                        <MdSettingsApplications className='icon'/>
-                        <span>Settings</span>
-                    </li>
-
-                    <p className="title">USER</p>
-
-                    <li>
-                        <MdOutlineAccountCircle className='icon'/>
-                        <span>Profile</span>
-                    </li>
-
-                    <li>
-                        <MdExitToApp className='icon'/>
-                        <span>Logout</span>
-                    </li>
+                    {
+                        sidebarData.map((i, index) => {
+                            return(
+                                <SidebarItem key={i.title} index={index} pathname={pathname} {...i}/>
+                            )
+                        })
+                    }
                 </ul>
             </div>
 

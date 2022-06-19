@@ -5,6 +5,7 @@
     min-height: 100vh;
     background-color: white;
     border-right: 0.5px solid rgb(228, 225, 225);
+    z-index: 1001;
 
     .top {
         display: flex;
@@ -28,15 +29,44 @@
             padding-left: 10px;
         }
 
-        li {
-            display: flex;
-            align-items: center;
-            padding: 5px 5px 5px 10px;
-            cursor: pointer;
-            transition: background-color 0.5s ease 0s;
+        a {
+            display: block;
+            border-right: 3px solid transparent;
+            border-left: 2px solid transparent;
+            text-decoration: none;
+            //transition: border 0.5s;
 
             &:hover {
-                background-color: #ece8ff;
+                //background-color: rgba(112, 184, 92, 0.08);
+                border-right: 3px solid rgba(112, 184, 92, 0.5);
+                border-left: 2px solid rgba(112, 184, 92, 0.5);
+            }
+
+            &.active {
+                background-color: rgba(112, 184, 92, 0.15);
+                border-right: 3px solid #70b85c;
+                border-left: 2px solid #70b85c;
+
+                .icon {
+                    color: #70b85c;
+                }
+
+                span {
+                    color: black;
+                }
+            }
+        }
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 5px 2px 5px 8px;
+            cursor: pointer;
+            //transition: background-color 0.5s ease 0s;
+
+            &:hover {
+                background-color: rgba(112, 184, 92, 0.08);
 
                 .icon {
                     color: #70b85c;
@@ -47,18 +77,10 @@
                 }
             }
 
-            a {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                text-decoration: none;
-            }
-
             .icon {
                 font-size: 18px;
                 color: #c8dead;
-                transition: color 0.5s ease 0s;
+                //transition: color 0.5s ease 0s;
             }
         }
 
@@ -67,7 +89,7 @@
             font-weight: 600;
             color: #888888;
             margin-left: 10px;
-            transition: color 0.5s ease 0s;
+            //transition: color 0.5s ease 0s;
         }
     }
 
@@ -75,6 +97,7 @@
         display: flex;
         align-items: center;
         margin-top: 10px;
+        margin-left: 7px;
         padding: 5px;
 
         .border-style {

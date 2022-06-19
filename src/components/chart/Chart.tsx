@@ -4,12 +4,17 @@ import './chart.scss'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import {chartsData} from "../../static-data/charts-data"
 
-const Chart: React.FC = () => {
+interface IChart {
+    aspect: number;
+    title: string;
+}
+
+const Chart: React.FC<IChart> = ({aspect, title}) => {
 
     return(
         <div className='chart'>
-            <div className="title">Last 6 Months (Revenue)</div>
-            <ResponsiveContainer width="100%" aspect={2 / 1}>
+            <div className="title">{title}</div>
+            <ResponsiveContainer width="100%" aspect={aspect}>
                 <AreaChart
                     data={chartsData}
                     width={730}
