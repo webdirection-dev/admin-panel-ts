@@ -13,6 +13,8 @@ import NotFond from "../pages/notFound/NotFond"
 import Sidebar from "../components/sidebar/Sidebar"
 import Navbar from "../components/navbar/Navbar"
 
+import {userInputs, productInputs} from "../static-data/form-source"
+
 const Main: React.FC = () => {
 
     return(
@@ -30,14 +32,14 @@ const Main: React.FC = () => {
                         <Route path="users">
                             <Route index element={<List />} />
                             <Route path=":userId" element={<Single />} />
-                            <Route path="new" element={<New />} />
+                            <Route path="new" element={<New inputs={userInputs}/>} />
                         </Route>
 
-                        {/*<Route path="products">*/}
-                        {/*    <Route index element={<List />} />*/}
-                        {/*    <Route path=":productId" element={<Single />} />*/}
-                        {/*    <Route path="new" element={<New />} />*/}
-                        {/*</Route>*/}
+                        <Route path="products">
+                            <Route index element={<List />} />
+                            <Route path=":productId" element={<Single />} />
+                            <Route path="new" element={<New inputs={productInputs}/>} />
+                        </Route>
                     </Route>
 
                     <Route path="*" element={<NotFond />} />
