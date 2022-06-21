@@ -1,5 +1,4 @@
 .datatable {
-    //width: ;
     height: 600px;
     padding: 20px;
 
@@ -72,6 +71,32 @@
                 color: white;
                 background-color: crimson;
             }
+        }
+    }
+}
+
+.datatableTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //width: 100%;
+    font-size: 24px;
+    color: gray;
+    padding: 20px 20px 0;
+    //margin-bottom: 10px;
+
+    .link {
+        font-size: 16px;
+        font-weight: 400;
+        color: #058205;
+        border: 1px solid #058205;
+        border-radius: 5px;
+        padding: 5px;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #d8ecd8;
         }
     }
 }

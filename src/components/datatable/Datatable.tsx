@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from 'react-router-dom'
 import './datatable.scss'
 
 import {userColumns, userRows} from "../../static-data/datatable-data"
@@ -14,7 +15,10 @@ const Datatable: React.FC = () => {
             renderCell: () => {
                 return (
                     <div className="cellAction">
-                        <div className="viewButton">View</div>
+                        <Link to='/users/test' style={{textDecoration: 'none'}}>
+                            <div className="viewButton">View</div>
+                        </Link>
+
                         <div className="deleteButton">Delete</div>
                     </div>
                 );
@@ -23,15 +27,23 @@ const Datatable: React.FC = () => {
     ]
 
     return(
-        <div className="datatable">
-            <DataGrid
-                rows={userRows}
-                columns={userColumns.concat(actionColumn)}
-                pageSize={9}
-                rowsPerPageOptions={[9]}
-                checkboxSelection
-            />
-        </div>
+        <>
+            <div className="datatableTitle">
+                Add New User
+                <Link to='/users/new' className='link'>Add New</Link>
+            </div>
+
+            <div className="datatable">
+                <DataGrid
+                    className='datagrid'
+                    rows={userRows}
+                    columns={userColumns.concat(actionColumn)}
+                    pageSize={9}
+                    rowsPerPageOptions={[9]}
+                    checkboxSelection
+                />
+            </div>
+        </>
     )
 }
 

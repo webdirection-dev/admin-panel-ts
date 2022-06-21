@@ -1,5 +1,6 @@
 import React from "react"
 import './main.scss'
+import '../style/dark.scss'
 
 import {Route, Routes} from "react-router-dom"
 
@@ -18,7 +19,7 @@ import {userInputs, productInputs} from "../static-data/form-source"
 const Main: React.FC = () => {
 
     return(
-        <div className="main">
+        <div className="main dark">
             <Sidebar />
 
             <div className="container">
