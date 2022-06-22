@@ -1,8 +1,9 @@
 .chart {
     flex: 4;
     color: gray;
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, .47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, .47);
+    background-color: var(--colors-bg);
+    -webkit-box-shadow: var(--box-shadow-widget);
+    box-shadow: var(--box-shadow-widget);
     padding: 10px;
 
     .title {
@@ -10,7 +11,7 @@
     }
 
     .chartGrid {
-        stroke: rgb(228, 225, 225);
+        stroke: var(--colors-chart-grid);
     }
 
     .recharts-responsive-container {

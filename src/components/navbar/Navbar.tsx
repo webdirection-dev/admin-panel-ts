@@ -1,8 +1,9 @@
-import React from "react"
+import React, {FC, Dispatch, SetStateAction} from "react"
 import './navbar.scss'
 import {
     MdOutlineSearch,
     MdOutlineLanguage,
+    MdDarkMode,
     MdOutlineDarkMode,
     MdOutlineFullscreenExit,
     MdOutlineNotificationsNone,
@@ -10,10 +11,15 @@ import {
     MdOutlineList,
 } from "react-icons/md";
 
-const Navbar: React.FC = () => {
+interface INav {
+    setDark: Dispatch<SetStateAction<boolean>>;
+    dark: boolean
+}
+
+const Navbar: FC<INav> = ({setDark, dark}) => {
 
     return(
-        <div className='navbar'>
+        <nav className='navbar'>
             <div className="wrapper">
                 <div className="search">
                     <input type="text" placeholder='Search...'/>
@@ -26,9 +32,17 @@ const Navbar: React.FC = () => {
                         English
                     </div>
 
-                    <div className="item">
-                        <MdOutlineDarkMode className='icon'/>
-                    </div>
+                    {!dark &&
+                        <div className="item" onClick={() => setDark(!dark)}>
+                            <MdOutlineDarkMode className='icon'/>
+                        </div>
+                    }
+
+                    {dark &&
+                        <div className="item" onClick={() => setDark(!dark)}>
+                            <MdDarkMode className='icon'/>
+                        </div>
+                    }
 
                     <div className="item">
                         <MdOutlineFullscreenExit className='icon'/>
@@ -58,7 +72,7 @@ const Navbar: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     )
 }
 

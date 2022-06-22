@@ -2,6 +2,12 @@
     height: 600px;
     padding: 20px;
 
+    .datagrid{
+        color: var(--color-hover-txt);
+        border-color: var(--colors-border);
+        background-color: var(--colors-bg);
+    }
+
     .cellWithImg {
         display: flex;
         align-items: center;
@@ -46,15 +52,15 @@
         .viewButton {
             width: 43px;
             text-align: center;
-            color: #6439ff;
-            border: 1px solid #6439ff;
+            color: var(--colors-title);
+            border: 1px solid var(--colors-title);
             border-radius: 5px;
             padding: 2px 5px;
             cursor: pointer;
 
             &:hover {
                 color: white;
-                background-color: #6439ff;
+                background-color: var(--colors-title);
             }
         }
 
@@ -88,15 +94,33 @@
     .link {
         font-size: 16px;
         font-weight: 400;
-        color: #058205;
-        border: 1px solid #058205;
+        color: var(--colors-title);
+        border: 1px solid var(--colors-title);
         border-radius: 5px;
         padding: 5px;
         text-decoration: none;
         cursor: pointer;
 
         &:hover {
-            background-color: #d8ecd8;
+            background-color: var(--colors-title);
+            color: white;
         }
     }
 }
+
+.MuiDataGrid-cell {
+    border-color: var(--colors-chart-grid) !important;
+}
+
+.datatable div:not(.MuiDataGrid-cell) {
+    border-color: var(--colors-border-datatable);
+}
+
+.MuiTablePagination-displayedRows {
+    color: var(--color-hover-txt) !important;
+}
+
+.MuiTablePagination-actions button {
+    color: var(--color-hover-txt) !important;
+}
+

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {Dispatch, SetStateAction, FC} from "react"
 import './sidebar.scss'
 
 import SidebarItem from "./SidebarItem"
@@ -6,11 +6,16 @@ import SidebarItem from "./SidebarItem"
 import {sidebarData} from "../../static-data/sidebar-data"
 import {useLocation} from "react-router-dom";
 
-const Sidebar: React.FC = () => {
+interface IAside {
+    setDark: Dispatch<SetStateAction<boolean>>;
+    dark: boolean
+}
+
+const Sidebar: FC<IAside> = ({setDark, dark}) => {
     const {pathname} = useLocation()
 
     return(
-        <div className='sidebar'>
+        <aside className='sidebar'>
             <div className="top">
                 <span className="logo">Admin Panel</span>
             </div>
@@ -30,15 +35,15 @@ const Sidebar: React.FC = () => {
             </div>
 
             <div className="bottom">
-                <div className="border-style">
+                <div className="border-style" onClick={() => setDark(false)}>
                     <div className="colorOption light"></div>
                 </div>
 
-                <div className="border-style">
+                <div className="border-style" onClick={() => setDark(true)}>
                     <div className="colorOption gray"></div>
                 </div>
             </div>
-        </div>
+        </aside>
     )
 }
 

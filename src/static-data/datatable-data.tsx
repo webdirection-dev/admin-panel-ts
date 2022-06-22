@@ -1,5 +1,14 @@
 import {GridColDef} from '@mui/x-data-grid'
 
+export interface IUserRows {
+    id: number;
+    username: string,
+    img: string,
+    status: string,
+    email: string,
+    age: number;
+}
+
 export const userColumns: GridColDef[] = [
     {
         field: "id",

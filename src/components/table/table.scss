@@ -1,4 +1,11 @@
 .table {
+    background-color: var(--colors-bg) !important;
+
+    .tableCell {
+        color: var(--color-hover-txt);
+        border-color: var(--colors-chart-grid);
+    }
+
     .cellWrapper {
         display: flex;
         align-items: center;

@@ -1,6 +1,5 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import './main.scss'
-import '../style/dark.scss'
 
 import {Route, Routes} from "react-router-dom"
 
@@ -17,13 +16,18 @@ import Navbar from "../components/navbar/Navbar"
 import {userInputs, productInputs} from "../static-data/form-source"
 
 const Main: React.FC = () => {
+    const [dark, setDark] = useState(false)
+
+    useEffect(() => {
+        document.body.setAttribute('data-theme', `${dark ? 'dark' : 'light'}`);
+    }, [dark]);
 
     return(
-        <div className="main dark">
-            <Sidebar />
+        <div className='main'>
+            <Sidebar setDark={setDark} dark={dark}/>
 
             <div className="container">
-                <Navbar />
+                <Navbar setDark={setDark} dark={dark}/>
 
                 <Routes>
                     <Route path="/">

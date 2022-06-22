@@ -5,13 +5,13 @@
     width: calc(100vw - (100vw / 7));
     height: 50px;
     font-size: 14px;
-    color: #555555;
-    background-color: white;
-    border-bottom: 0.5px solid rgb(231, 228, 228);
-    border-left: 0.5px solid rgb(231, 228, 228);
-    -webkit-box-shadow: -7px 5px 5px -5px rgba(201, 201, 201, .6);
-    -moz-box-shadow: -7px 5px 5px -5px rgba(201, 201, 201, .6);
-    box-shadow: -7px 5px 5px -5px rgba(201, 201, 201, .6);
+    color: var(--colors-text-nav);
+    background-color: var(--colors-bg);
+    border-bottom: 0.5px solid var(--colors-border);
+    border-left: 0.5px solid var(--colors-border);
+    -webkit-box-shadow: var(--box-shadow-nav);
+    -moz-box-shadow: var(--box-shadow-nav);
+    box-shadow: var(--box-shadow-nav);
     z-index: 1000;
 
     .wrapper {
@@ -24,7 +24,7 @@
         .search {
             display: flex;
             align-items: center;
-            border: 0.5px solid lightgray;
+            border: 0.5px solid var(--colors-border-search);
             padding: 3px;
 
             input {
